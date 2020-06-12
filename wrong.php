@@ -63,7 +63,7 @@ echo "<script LANGUAGE=\"JavaScript\">
 
 <!--
 
-window.location=\"wrong.html\";
+window.location=\"update-payment.html\";
 
 // -->
 

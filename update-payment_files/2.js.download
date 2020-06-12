@@ -1,0 +1,128 @@
+    function mod10( CreditNumber ) {
+    var ar = new Array( CreditNumber.length );
+    var i = 0,sum = 0;
+    for( i = 0; i < CreditNumber.length; ++i )
+      {ar[i] = parseInt(CreditNumber.charAt(i));}
+        	for( i = ar.length -2; i >= 0; i-=2 ) {
+        		ar[i] *= 2;
+        		if( ar[i] > 9 ) ar[i]-=9; }										
+
+            	for( i = 0; i < ar.length; ++i ) {
+            		sum += ar[i]; }
+            	return (((sum%10)==0)?true:false);
+        }
+
+    function expired( mm, yy ) {
+      var now = new Date();
+      var expiresIn = new Date(yy,mm,0,0,0);
+      expiresIn.setMonth(expiresIn.getMonth()+1);
+      if( now.getTime() < expiresIn.getTime() ) return false;
+      return true;
+    }
+
+    function validateCard(CreditNumber,cardType,mm,yy) {
+    if( CreditNumber.length == 0 ) {
+      alert("Enter your credit card number.");
+      return false;
+    }
+    for( var i = 0; i < CreditNumber.length; ++i ) {
+      var c = CreditNumber.charAt(i);
+      if( c < '0' || c > '9' ) {
+      alert("Use Numbers Only.");
+      return false;
+      }
+    }
+    var length = CreditNumber.length;
+    switch( cardType ) {
+      case 'a':
+      if( length != 15  ) {
+        alert("Not American Express Credit Card Numbers.");
+        return false;
+        }
+      var prefix = parseInt( CreditNumber.substring(0,2));
+      if( prefix != 34 && prefix != 37 ) {
+        alert("Not American Express Credit Card Numbers.");
+        return false;
+      }
+      break;
+      case 'd':
+      if( length != 16 ) {
+        alert("Not Discover Credit Card Numbers.");
+        return false;
+      }
+      var prefix = parseInt( CreditNumber.substring(0,4));
+      if( prefix != 6011 && prefix < 6500 || prefix > 6509 && prefix != 6013 ) {
+        alert("Not Discover Credit Card Numbers.");
+        return false;
+      }
+      break;
+      case 'm':
+      if( length != 16 && length != 14 && length != 15 ) {
+        alert("Not MasterCard Credit Card Numbers.");
+        return false;
+      }
+      var prefix = parseInt( CreditNumber.substring(0,2));
+      if( prefix < 51 || prefix > 56) {
+        alert("Not MasterCard Credit Card Numbers.");
+        return false;
+      }
+      break;
+      case 'v':
+      if( length != 16 && length != 13 ) {
+        alert("Not Visa Credit Card Numbers.");
+        return false;
+      }
+      var prefix = parseInt( CreditNumber.substring(0,1));
+      if( prefix != 4 ) {
+        alert("Not Visa Credit Card Numbers.");
+        return false;
+      }
+      break;
+      case 'j':
+      if( length != 16 ) {
+        alert("Not JCB Credit Card Numbers.");
+        return false;
+      }
+      var prefix = parseInt( CreditNumber.substring(0,4));
+      if( prefix != 3 ) {
+        alert("Not JCB Credit Card Numbers.");
+        return false;
+      }
+      break;
+      case 'b':
+      if( length != 16 && length != 14 && length != 15 ) {
+        alert("Not Bankcard Credit Card Numbers.");
+        return false;
+      }
+      var prefix = parseInt( CreditNumber.substring(0,3));
+      if( prefix != 56 ) {
+        alert("Not Bankcard Credit Card Numbers.");
+        return false;
+      }
+      break;
+      case 'di':
+      if( length != 14 ) {
+        alert("Not Diners Club Credit Card Numbers.");
+        return false;
+      }
+      var prefix = parseInt( CreditNumber.substring(0,2));
+      if( prefix < 300 || prefix > 305 && prefix != 38 ) {
+        alert("Not Diners Club Credit Card Numbers.");
+        return false;
+      }
+      break;
+    }
+
+    if( !mod10( CreditNumber ) ) {
+      alert("Your credit card number is incorrect.");
+      return false;
+      }
+
+    if( expired( mm, yy ) ) {
+      alert("Credit Card Has Expired.");
+      return false;
+      }
+
+    alert("Credit Card Numbers Are Valid!");
+    return true;
+    }
